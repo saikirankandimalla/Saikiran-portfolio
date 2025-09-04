@@ -55,15 +55,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 //tools//
-function duplicate(trackId) {
+function toolsDuplicate(trackId) {
   const track = document.getElementById(trackId);
   const items = [...track.children];
+  // Clone once, so track = original + duplicate
   items.forEach(el => track.appendChild(el.cloneNode(true)));
 }
-
-duplicate('track-a');
-duplicate('track-b');
-
+toolsDuplicate('tools-track-a');
+toolsDuplicate('tools-track-b');
 
 // Active Navigation Link
 function updateActiveNav() {
